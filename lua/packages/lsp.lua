@@ -24,6 +24,10 @@ local function on_attach(_, bufnr)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 
+    buf_set_keymap('n', 'gvd', '<cmd>:only<CR><C-W>v<C-W>w<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_set_keymap('n', 'gvi', '<cmd>:only<CR><C-W>v<C-W>w<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    buf_set_keymap('n', 'gvD', '<cmd>:only<CR><C-W>v<C-W>w<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+
     buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 
