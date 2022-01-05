@@ -10,6 +10,7 @@ fn = vim.fn
 
 exec = vim.api.nvim_exec
 cmd = vim.api.nvim_command
+feedkeys = vim.api.nvim_feedkeys
 
 
 -- Module managing

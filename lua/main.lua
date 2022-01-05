@@ -17,8 +17,30 @@ o.incsearch = true
 g.mapleader = ","
 o.timeout = false
 o.timeoutlen = 0
+o.hidden = true
 
 o.termguicolors = true
+
+
+-- Load
+
+load 'packages'
+load 'win_sizer'
+load 'terminal'
+load 'diagnostic'
+load 'theme.night'
+
+
+-- Autocmd
+
+nvim_create_augroups({
+    terminal_job = {
+        { "TermOpen", "*", [[tnoremap <buffer> <Esc> <c-\><c-n>]] };
+        { "TermOpen", "*", "startinsert" };
+        { "TermOpen", "*", "setlocal listchars= nonumber norelativenumber" };
+    };
+})
+
 
 
 -- Keybinds
@@ -26,8 +48,3 @@ o.termguicolors = true
 map('n', '<Leader>c', '<CMD>noh<CR>')
 map('n', '<Leader>x', '<CMD>lua reload_selected()<CR>')
 
--- Load
-
-load 'packages'
-load 'diagnostic'
-load 'theme.night'
