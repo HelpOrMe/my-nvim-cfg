@@ -32,6 +32,7 @@ packer.startup(function()
     use 'RishabhRD/popfix'
     use 'RishabhRD/nvim-lsputils'
     use 'folke/trouble.nvim'
+    use 'akinsho/toggleterm.nvim'
 
     -- Rust
     use 'DingDean/wgsl.vim'
@@ -56,5 +57,5 @@ load {
     'packages.colorizer',
     'packages.comment',
     'packages.trouble',
+    'packages.toggleterm'
 }
-

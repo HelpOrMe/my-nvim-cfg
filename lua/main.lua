@@ -26,7 +26,6 @@ o.termguicolors = true
 
 load 'packages'
 load 'win_sizer'
-load 'terminal'
 load 'diagnostic'
 load 'theme.night'
 

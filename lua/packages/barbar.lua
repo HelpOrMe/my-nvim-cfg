@@ -36,4 +36,3 @@ g.bufferline = {
     icons = 'both',
     icon_pinned = 'P'
 }
-
