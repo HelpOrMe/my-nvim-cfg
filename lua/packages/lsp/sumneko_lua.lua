@@ -4,7 +4,7 @@ return function(server)
     table.insert(runtime_path, "lua/?.lua")
     table.insert(runtime_path, "lua/?/init.lua")
 
-    server:setup(config('sumneko_lsp.lua', {
+    server:setup(config('sumneko_lua.lua', {
         capabilities = capabilities,
         root_dir = function(...)
             local tbl = {...}
