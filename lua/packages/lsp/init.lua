@@ -3,10 +3,12 @@ local lsp_setup = {ignore = {}}
 local lsp = load 'lspconfig'
 local lsp_installer = load 'nvim-lsp-installer'
 
+local load_prefix = 'packages.lsp.'
+
 
 -- Attach
 
-local on_attach = load 'on_attach'
+local on_attach = load(load_prefix..'on_attach')
 
 
 -- Capabilities
@@ -17,7 +19,7 @@ capabilities = load('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Tools
 
-local function config(filename, default)
+function config(filename, default)
     local path = lsp.util.root_pattern(filename)(fn.expand('%:p'))
     if path then
         return table.merge(default, loadfile(path..'/'..filename)())
@@ -29,12 +31,14 @@ end
 
 -- UI
 
-load 'ui'
+load(load_prefix..'ui')
+
 
 -- Servers
 
-lsp_setup.sumneko_lua = load 'sumneko_lua'
-lsp_setup.rust_analyzer = load 'rust_analyzer'
+lsp_setup.sumneko_lua = load(load_prefix..'sumneko_lua')
+lsp_setup.rust_analyzer = load(load_prefix..'rust_analyzer')
+
 
 -- Setup
 
