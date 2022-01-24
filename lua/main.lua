@@ -38,9 +38,12 @@ nvim_create_augroups({
         { "TermOpen", "*", [[tnoremap <buffer> <Esc> <c-\><c-n>]] };
         { "TermOpen", "*", "startinsert" };
         { "TermOpen", "*", "setlocal listchars= nonumber norelativenumber" };
-    };
+    },
+    session = {
+        { "VimLeave", "*", "mksession" };
+        -- { "VimEnter", "*", "source ~/Session.vim" };
+    }
 })
-
 
 
 -- Keybinds
