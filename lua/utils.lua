@@ -1,15 +1,12 @@
 
-function io.get_files(directory)
-    local i, t, popen = 0, {}, io.popen
-    for filename in popen('ls '..directory..''):lines() do
-        i = i + 1
-        t[i] = filename
+function map(mode, lhs, rhs, opts)
+    local options = {noremap = true}
+    if opts then
+        for _, v in ipairs(opts) do
+            options[v] = true
+        end
     end
-    return t
-end
-
-function io.get_parent_dir(path)
-    return string.gmatch(path, '(.+)\\/')[1]
+    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 function table.merge(t1, t2)
@@ -27,7 +24,16 @@ function table.merge(t1, t2)
     return t1
 end
 
-function print_table(tbl, indent)
+function table.list(tbl)
+    local lst = {}
+    for _, v in pairs(tbl) do
+        table.insert(tbl, v)
+    end
+
+    return lst
+end
+
+function table.print(tbl, indent)
     indent = indent or 0
     
     if type(tbl) ~= 'table' then
