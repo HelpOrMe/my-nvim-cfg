@@ -21,4 +21,3 @@ vim.lsp.handlers['textDocument/typeDefinition'] = cursor_dropdown(telescope.lsp_
 vim.lsp.handlers['textDocument/implementation'] = cursor_dropdown(telescope.lsp_implementations)
 vim.lsp.handlers['textDocument/documentSymbol'] = telescope.lsp_document_symbols
 vim.lsp.handlers['workspace/symbol'] = telescope.lsp_workspace_symbols
-

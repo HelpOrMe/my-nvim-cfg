@@ -1,19 +1,17 @@
+lsp = load 'lspconfig'
+
 local lsp_setup = {ignore = {}}
-
-local lsp = load 'lspconfig'
 local lsp_installer = load 'nvim-lsp-installer'
-
 local load_prefix = 'packages.lsp.'
-
 
 -- Attach
 
-local on_attach = load(load_prefix..'on_attach')
+on_attach = load(load_prefix..'on_attach')
 
 
 -- Capabilities
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = load('cmp_nvim_lsp').update_capabilities(capabilities)
 
 
@@ -27,7 +25,6 @@ function config(filename, default)
         return default
     end
 end
-
 
 -- UI
 
