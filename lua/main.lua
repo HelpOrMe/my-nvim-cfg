@@ -30,23 +30,7 @@ load 'diagnostic'
 load 'theme.night'
 
 
--- Autocmd
-
-nvim_create_augroups({
-    terminal_job = {
-        { "TermOpen", "*", [[tnoremap <buffer> <Esc> <c-\><c-n>]] };
-        { "TermOpen", "*", "startinsert" };
-        { "TermOpen", "*", "setlocal listchars= nonumber norelativenumber" };
-    },
-    session = {
-        { "VimLeave", "*", "mksession" };
-        -- { "VimEnter", "*", "source ~/Session.vim" };
-    }
-})
-
-
 -- Keybinds
 
 map('n', '<Leader>c', '<CMD>noh<CR>')
 map('n', '<Leader>x', '<CMD>lua reload_selected()<CR>')
-
