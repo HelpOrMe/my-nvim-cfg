@@ -103,29 +103,6 @@ add_packer()
 packer = require('packer')
 use = packer.use
 
-
--- Utils
-
-function map(mode, lhs, rhs, opts)
-    local options = {noremap = true}
-    if opts then
-        for _, v in ipairs(opts) do
-            options[v] = true
-        end
-    end
-    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
-
-function table.list(tbl)
-    local lst = {}
-    for _, v in pairs(tbl) do
-        table.insert(tbl, v)
-    end
-
-    return lst
-end
-
-
 -- Load
 
 load 'main'
