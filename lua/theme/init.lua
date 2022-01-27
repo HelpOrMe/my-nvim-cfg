@@ -16,8 +16,8 @@ return function(p)
 
     -- General
 
-    hi('Normal', p.light0, p.shade1)
-    hi('NonText', p.shade1, p.shade1)
+    hi('Normal', p.light0, p.shade0)
+    hi('NonText', p.shade1, p.shade0)
     hi('SpecialKey', p.shade1, p.shade1)
 
     -- Cursorline
@@ -36,7 +36,8 @@ return function(p)
     hi('SpecialKey', p.active1, p.shade1)
 
     -- Match paired bracket under the cursor
-    hi('MatchParen', p.shade0, p.shade4)
+
+    hi('MatchParen', p.light0, p.shade1)
 
     hi('VertSplit', p.shade1, p.shade0)
     hi('WildMenu', p.light0, p.shade2)
@@ -45,11 +46,11 @@ return function(p)
     -- Input line
 
     hi('ErrorMsg', p.active1, p.shade1)
-    hi('Question', p.passive0, p.shade1)
+    hi('Question', p.active2, p.shade1)
     hi('Warning', p.active2, p.shade1)
 
     hi('WarningMsg', p.active2, p.shade1)
-    hi('MoreMsg', p.passive0, p.shade1)
+    hi('MoreMsg', p.active0, p.shade1)
 
     -- Gutter
 
@@ -61,15 +62,15 @@ return function(p)
 
     -- Cursor
 
-    hi('Cursor', p.light3, p.shade1)
-    hi('lCursor', p.light3, p.shade1)
-    hi('vCursor', p.light3, p.shade1)
-    hi('iCursor', p.light3, p.shade1)
+    hi('Cursor', p.light0, p.shade0)
+    hi('lCursor', p.light0, p.shade0)
+    hi('vCursor', p.light0, p.shade0)
+    hi('iCursor', p.light0, p.shade0)
 
     -- Search
 
-    hi('Search', p.shade1, p.passive0)
-    hi('IncSearch', p.shade1, p.passive0)
+    hi('Search', p.shade1, p.light3, p.italic)
+    hi('IncSearch', p.shade1, p.light3, p.italic)
 
     -- Statusline
 
@@ -78,27 +79,27 @@ return function(p)
 
     -- Popup
 
-    hi('Pmenu', p.light0, p.shade2)
-    hi('PmenuSel', p.light0, p.shade3)
-    hi('PmenuSbar', p.light0, p.shade2)
-    hi('PmenuThumb', p.light0, p.shade2)
+    hi('Pmenu', p.light0, p.shade1)
+    hi('PmenuSel', p.light0, p.shade2)
+    hi('PmenuSbar', p.light0, p.shade1)
+    hi('PmenuThumb', p.light0, p.shade1)
 
     -- Syntax
 
-    hi('Special', p.light2)
+    hi('Special', p.active1)
     hi('Comment', p.shade4)
     hi('Todo', p.active0)
     hi('Error', p.active1)
     hi('Whitespace', p.shade1)
 
-    hi('Statement', p.passive1)
-    hi('Conditional', p.passive1)
+    hi('Statement', p.passive1, p.none, p.bold)
+    hi('Conditional', p.passive1, p.none, p.bold)
     hi('Repeat', p.passive1)
     hi('Exception', p.passive1)
-    hi('Operator', p.light3)
+    hi('Operator', p.light3) -- do nothing
     hi('Keyword', p.passive1)
-    hi('Function', p.passive1)
-    hi('Identifier', p.light0)
+    hi('Function', p.passive2)
+    hi('Identifier', p.passive3)
     hi('Typedef', p.passive1)
 
     hi('PreProc', p.passive0)
@@ -108,21 +109,25 @@ return function(p)
     hi('PreCondit', p.passive0)
 
     hi('Constant', p.passive3)
-    hi('Character', p.passive3)
-    hi('String', p.passive3)
-    hi('Boolean', p.passive3)
-    hi('Number', p.light2)
-    hi('Float', p.light2)
-    hi('Type', p.passive4)
-    hi('StorageClass', p.passive4)
-    hi('Structure', p.passive4)
 
+    hi('Character', p.passive4)
+    hi('String', p.passive4)
+
+    hi('Boolean', p.passive3)
+    hi('Number', p.light2, p.none, p.bold)
+    hi('Float', p.light2, p.none, p.bold)
+
+    hi('Type', p.passive3)
+    hi('StorageClass', p.passive3)
+    hi('Structure', p.passive3)
+    
+    l = true
     -- IndentLine
 
     hi('IndentBlanklineChar', p.shade3)
     hi('IndentBlanklineSpaceChar', p.shade3)
     hi('IndentBlanklineSpaceCharBlankline', p.shade3)
-    hi('IndentBlanklineContextChar', p.shade4, p.ignore, p.bold)
+    hi('IndentBlanklineContextChar', p.shade4)
 
     -- Lightline
 
@@ -244,6 +249,8 @@ return function(p)
 
     -- Telescope
 
-    hi('TelescopeNormal', p.light0, p.shade2)
-    hi('TelescopeSelection', p.light0, p.shade3)
+    hi('TelescopeNormal', p.light0, p.shade1)
+    hi('TelescopeSelection', p.light0, p.shade2)
+    hi('TelescopeBorder', p.shade3, p.shade1)
 end
+
