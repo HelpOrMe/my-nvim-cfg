@@ -1,8 +1,8 @@
 load 'theme.utils'
 
 
--- Origin color (h, s)
-h, s = 268, 30 
+-- Origin color (h, s, l)
+h, s, l = 268, 30, 0
 
 
 load 'theme' {
@@ -12,17 +12,17 @@ load 'theme' {
     italic = 'italic',
     inverse = 'inverse',
 
-    shade0 = hslm2hex(h, s, 0),
-    shade1 = hslm2hex(h, s, 2),
-    shade2 = hslm2hex(h, s, 9),
-    shade3 = hslm2hex(h, s, 12),
-    shade4 = hslm2hex(h, s, 24),
+    shade0 = hslm2hex(h, s, l),
+    shade1 = hslm2hex(h, s, l + 2),
+    shade2 = hslm2hex(h, s, l + 9),
+    shade3 = hslm2hex(h, s, l + 12),
+    shade4 = hslm2hex(h, s, l + 24),
 
-    light0 = hslm2hex(h, s, 100),
-    light1 = hslm2hex(h, s, 90),
-    light2 = hslm2hex(h, s, 80),
-    light3 = hslm2hex(h, s, 70),
-    light4 = hslm2hex(h, s, 60),
+    light0 = hslm2hex(h, s, l + 100),
+    light1 = hslm2hex(h, s, l + 90),
+    light2 = hslm2hex(h, s, l + 80),
+    light3 = hslm2hex(h, s, l + 70),
+    light4 = hslm2hex(h, s, l + 60),
 
     passive0 = '#DEB4FA',
     passive1 = '#D998E3',
