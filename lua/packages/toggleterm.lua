@@ -1,7 +1,9 @@
 load('toggleterm').setup {
     open_mapping = '<Leader>t',
     direction = 'vertical',
-    size = vim.o.columns * 0.3
+    start_in_insert = false,
+    size = vim.o.columns * 0.3,
+    shell = '/bin/fish'
 }
 
 function _G.set_terminal_keymaps()
