@@ -33,7 +33,7 @@ function nvim_tree_toggle()
         require('nvim-tree').open()
     else
         require('bufferline.state').set_offset(0)
-        require('nvim-tree').close()
+        require('nvim-tree.view').close()
     end
 end
 
