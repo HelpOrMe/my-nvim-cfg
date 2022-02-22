@@ -2,7 +2,9 @@ load('toggleterm').setup {
     open_mapping = '<Leader>t',
     direction = 'vertical',
     start_in_insert = false,
-    size = vim.o.columns * 0.3,
+    size = function(term) 
+        return vim.o.columns * 0.3
+    end,
     shell = '/bin/fish'
 }
 
