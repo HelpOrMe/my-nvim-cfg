@@ -1,11 +1,15 @@
 
 -- Config
 
-load('nvim-tree').setup {
+load('nvim-tree').setup(merge_config("nvim_tree", {
     disable_netrw = true,
     hijack_netrw = true,
+    hijack_cursor = true,
     number = false,
     relativenumber = false,
+    update_focused_file = {
+        enable = true
+    },
     git = {
         enable = false,
     },
@@ -16,7 +20,7 @@ load('nvim-tree').setup {
         cmd = "trash",
         require_confirm = true
     }
-}
+}))
 
 
 -- Integration
@@ -41,5 +45,4 @@ end
 -- Keybinds
 
 map('n', '<Leader>d', '<CMD>lua nvim_tree_toggle()<CR>')
-map('n', '<Leader>r', '<CMD>NvimTreeRefresh<CR>')
 

@@ -4,6 +4,7 @@ local lsp_setup = {ignore = {}}
 local lsp_installer = load 'nvim-lsp-installer'
 local load_prefix = 'packages.lsp.'
 
+
 -- Attach
 
 on_attach = load(load_prefix..'on_attach')
@@ -15,17 +16,6 @@ capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = load('cmp_nvim_lsp').update_capabilities(capabilities)
 
 
--- Tools
-
-function config(filename, default)
-    local path = lsp.util.root_pattern(filename)(fn.expand('%:p'))
-    if path then
-        return table.merge(default, loadfile(path..'/'..filename)())
-    else
-        return default
-    end
-end
-
 -- UI
 
 load(load_prefix..'ui')
@@ -35,6 +25,7 @@ load(load_prefix..'ui')
 
 lsp_setup.sumneko_lua = load(load_prefix..'sumneko_lua')
 lsp_setup.rust_analyzer = load(load_prefix..'rust_analyzer')
+lsp_setup.omnisharp = load(load_prefix..'omnisharp')
 
 
 -- Setup

@@ -1,6 +1,6 @@
 
 return function(server)
-    server:setup(config('rust_analyzer.lua', {
+    server:setup(merge_config('rust_analyzer', {
         capabilities = capabilities,
         on_attach = on_attach,
         settings = {
