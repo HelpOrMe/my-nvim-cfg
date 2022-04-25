@@ -32,10 +32,16 @@ packer.startup(function()
     use 'RishabhRD/popfix'
     use 'RishabhRD/nvim-lsputils'
     use 'folke/trouble.nvim'
-    use 'akinsho/toggleterm.nvim'
+    use 'josa42/nvim-lightline-lsp'
 
     -- Rust
     use 'DingDean/wgsl.vim'
+
+    -- CSharp (Unity)
+    use 'Hoffs/omnisharp-extended-lsp.nvim'
+    use 'OmniSharp/omnisharp-vscode'
+    use 'YclepticStudios/vscode-unity-snippets'
+    use 'diegosarmentero/vscode-unity-dots'
 
     -- https://www.nerdfonts.com/font-downloads
     use 'kyazdani42/nvim-web-devicons'
@@ -56,6 +62,5 @@ load {
     'packages.lsp',
     'packages.colorizer',
     'packages.comment',
-    'packages.trouble',
-    'packages.toggleterm'
+    'packages.trouble'
 }

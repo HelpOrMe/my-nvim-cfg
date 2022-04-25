@@ -6,9 +6,7 @@ local function hi(group, fg, bg, gui, guisp)
     if bg then hi = hi..' guibg='..bg end
     if gui then hi = hi..' gui='..gui end
     if guisp then hi = hi..' guisp='..guisp end
-
-    cmd(hi)
-end
+cmd(hi) end
 
 
 -- Load scheme
@@ -87,7 +85,7 @@ return function(p)
     -- Syntax
 
     hi('Special', p.active1)
-    hi('Comment', p.shade4)
+    hi('Comment', p.light4)
     hi('Todo', p.active0)
     hi('Error', p.active1)
     hi('Whitespace', p.shade1)
@@ -121,7 +119,6 @@ return function(p)
     hi('StorageClass', p.passive3)
     hi('Structure', p.passive3)
     
-    l = true
     -- IndentLine
 
     hi('IndentBlanklineChar', p.shade3)
@@ -140,7 +137,7 @@ return function(p)
         subseparator = {left = '', right = ''},
         active = {
             left = {{'mode', 'paste'}, {'filename'}, {'gitbranch'}},
-            right = {{'filetype'}, {'lineinfo'}}
+            right = {{'filetype'}, {'lineinfo'}, {'lsp_ok', 'lsp_status'}}
         }
     }
 
@@ -182,6 +179,7 @@ return function(p)
 
     g['lightline#colorscheme#default#palette'] = filled
     vim.schedule(function()
+        fn['lightline#lsp#register']()
         fn['lightline#disable']()
         fn['lightline#enable']()
     end)
